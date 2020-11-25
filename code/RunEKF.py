@@ -4,12 +4,6 @@ from numpy import *
 import matplotlib.pyplot as plt
 from EKF import *
 
-
-# This defines a simple class for running your EKF code. As with
-# all the code, feel free to modify it as you see fit, or to write
-# your own outright.
-
-
 class RunEKF(object):
 
     def __init__(self):
