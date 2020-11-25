@@ -72,14 +72,10 @@ class EKF(object):
         invtemp = invtemp + self.Q
         #print("KK")
         K = np.matmul(temp, inv(invtemp))
-        #print(K)
 
         hu = np.array([(self.mu[0][0]*self.mu[0][0]) + (self.mu[0][1]*self.mu[0][1]), self.mu[0][2]])
-        #print("---")
         zDiff = z - hu
-        #print(zDiff)
         kGain = np.matmul(K, zDiff)
-        #print(kGain)
         self.mu = self.mu + kGain
 
         KH = np.matmul(K, self.H)
