@@ -44,8 +44,6 @@ class RunEKF(object):
             self.ekf.prediction(self.U[t,:])
             self.ekf.update(self.Z[t,:])
             self.MU = concatenate((self.MU, self.ekf.getMean()))
-            #print(self.MU)
-            #print("---")
             self.VAR = concatenate((self.VAR, self.ekf.getVariances()))
 
         print(self.ekf.getMean())
